@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* 容器盒子 容器元素会在双轴上居中分布  */
+body,html{
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    display: flex;
+    /* 1vw等于视口宽度的1%。 */
+    width: 90vw;
+}
+/* 对弹性元素的设置 */
+.container>.panel{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* 每张图非active类的 初始shrink为0.5 即收缩一半  */
+    flex: 0.5;
+    padding: 10px;
+    color: #fff;
+    border-radius: 50px;
+    margin: 10px;
+    /* 设置动画 */
+    transition: flex .5s cubic-bezier(0.175,0.885,0.32,1.275);
+    position: relative;
+    cursor: pointer;
+    height: 90vh;
+}
+/* 文字最简单的样式 */
+.container>.panel>h3{
+    color: yellow;
+    font-size: 25px;
+    text-align: center;
+    line-height: 90vh;
+}
+.container>.panel.active{
+    flex:5
+}
